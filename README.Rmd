@@ -1,3 +1,9 @@
+### rgrass
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/rsbivand/rgrass/workflows/R-CMD-check/badge.svg)](https://github.com/rsbivand/rgrass/actions)
+<!-- badges: end -->
+
 2022-03-04: rastNG branch merged into rgrass7, main and rgrass.
 
 2022-02-18: rastNG branch ready for testing and within a short period for merging with the rgrass7 and rgrass branches and main.
