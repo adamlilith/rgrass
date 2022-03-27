@@ -1,0 +1,38 @@
+on:
+  push:
+    branches: val-adding-github-actions
+
+jobs:
+  install-grass:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        grass: [ '8_0' ] # , '7_8' 
+        os: [ 'ubuntu-latest' ] # , 'windows-latest'
+        r: [ 'release' ] # , 'devel'
+    
+    name: Test rgrass
+    steps:
+
+      - uses: actions/checkout@v2
+      
+      - uses: r-lib/actions/setup-r@v1
+        with:
+          r-version: ${{ matrix.config.r }}
+          http-user-agent: ${{ matrix.config.http-user-agent }}
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v1
+        with:
+          extra-packages: rcmdcheck
+
+      - id: setup GRASS
+        uses: vlucet/grass-actions/setup-grass@main
+        with:
+          grass-version: ${{ matrix.grass }}
+          os: ${{ matrix.os }}
+        
+      - id: test rgrass
+        run: |
+          Rscript -e 'library(rgrass7);rgrass7::initGRASS()'
+          
