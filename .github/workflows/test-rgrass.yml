@@ -26,13 +26,13 @@ jobs:
         with:
           extra-packages: rcmdcheck
 
-      - id: setup GRASS
+      - id: setup-GRASS
         uses: vlucet/grass-actions/setup-grass@main
         with:
           grass-version: ${{ matrix.grass }}
           os: ${{ matrix.os }}
         
-      - id: test rgrass
+      - id: test-rgrass
         run: |
           Rscript -e 'library(rgrass7);rgrass7::initGRASS()'
           
