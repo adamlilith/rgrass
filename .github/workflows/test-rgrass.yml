@@ -34,5 +34,5 @@ jobs:
         
       - id: test-rgrass
         run: |
-          Rscript -e 'library(rgrass7);rgrass7::initGRASS()'
+          Rscript -e 'library(rgrass7);rgrass7::initGRASS(gisBase="~/install",gisDbase="~/")'
           
