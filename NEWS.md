@@ -1,4 +1,4 @@
-# Version 0.2-11 (development)
+# version 0.2-11 (development)
 
 * deprecate all functions - use **rgrass**, not this package
 
