@@ -133,15 +133,21 @@ parseGRASS <- function(cmd, legacyExec=NULL) {
 } 
 
 setXMLencoding <- function(enc) {
+        .Deprecated(new="setXMLencoding", package="rgrass", old="setXMLencoding",
+            msg="Package rgrass7 transitioning to package rgrass for GRASS 7+.")
   if (!is.character(enc) || length(enc) > 1)
     stop("enc must be a character string")
   invisible(assign("override_encoding", enc, envir=.GRASS_CACHE))
 }
 
 getXMLencoding <- function() {
+        .Deprecated(new="getXMLencoding", package="rgrass", old="getXMLencoding",
+            msg="Package rgrass7 transitioning to package rgrass for GRASS 7+.")
  get("override_encoding", envir=.GRASS_CACHE)
 }
 print.GRASS_interface_desc <- function(x, ...) {
+        .Deprecated(new="print.GRASS_interface_desc", package="rgrass", old="print.GRASS_interface_desc",
+            msg="Package rgrass7 transitioning to package rgrass for GRASS 7+.")
     cat("Command:", x$cmd, "\n")
     if (nchar(x$ext) > 0) cat("Extension:", x$ext, "\n")
     if (nchar(x$prep) > 0) cat("Shell prefix:", x$prep, "\n")

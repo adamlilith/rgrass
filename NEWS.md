@@ -1,4 +1,8 @@
-# version 0.2-11 (development)
+# version 0.2-12 (development)
+
+* #67 deprecating minor functions too and update README
+
+# version 0.2-11 (2022-10-06)
 
 * deprecate all functions - use **rgrass**, not this package
 
